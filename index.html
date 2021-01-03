@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		 #design{
+        text-align: center;
+        background-color:seashell;
+        width:500px;
+        height:400px;
+        border:2px solid black;
+        margin: 1px;
+        }
+	</style>
+<script>
+	function decryptData() {
+		var input = document.getElementById('input').value;
+		console.log(input);
+		 n = "";
+		 var s;
+		 res = "";
+		for (var i = 0; i < input.length; i++) {
+			//input[i]
+			n =input.charCodeAt(i) - 3;
+			//s = s + parseInt(n);
+			res = res + String.fromCharCode(n);
+			console.log(res);
+		}
+		 
+         document.getElementById("result").innerHTML = "The Decrypted data:" + res;
+			}
+        function encryptData() {
+		var input = document.getElementById('input').value;
+		console.log(input);
+		 n = "";
+		 var s;
+		 res = "";
+		for (var i = 0; i < input.length; i++) {
+			//input[i]
+			n =  3 + input.charCodeAt(i);
+			//s = s + parseInt(n);
+			res = res + String.fromCharCode(n);
+			console.log(res);
+		}
+		 
+         document.getElementById("result").innerHTML = "The Encrypted data:" + res;
+			}
+
+
+</script>	
+</head>
+	<!-- fill your code here-->
+    <body>
+    	<center>
+    	<h2>Encryption/Decryption of the Data</h2>
+        <div id=design>
+            <textarea id="input" cols="50" rows="10" style="border:dotted 2px orange;"></textarea><br><br>
+            <input type="button" id="encrypt" value="Encrypt" onclick="encryptData()">
+           <input type="button" id="encrypt" value="Decrypt" onclick="decryptData()">
+           
+        <div id="result">
+         
+        </div>            
+        </div>
+        </center>
+    </body>
+</html>
